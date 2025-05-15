@@ -1,0 +1,74 @@
+
+\input{Init/sampul-luar.tex}
+\cleardoublepage
+
+% Atur ulang penomoran halaman
+\setcounter{page}{1}
+
+% Sampul dalam Bahasa Indonesia
+\input{Init/sampul-luar-tipis.tex}
+\clearpage
+\cleardoublepage
+
+% Sampul dalam Bahasa Inggris
+
+\input{Init/sampul-luar-tipis-eng.tex}
+\cleardoublepage
+
+% Label tabel dan gambar dalam bahasa indonesia
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\tablename}{Tabel}
+
+% Pengaturan ukuran indentasi paragraf
+\setlength{\parindent}{2em}
+
+% Pengaturan ukuran spasi paragraf
+\setlength{\parskip}{1ex}
+
+% Lembar pengesahan
+\input{Init/lembar-pengesahan.tex}
+\cleardoublepage
+\input{Init/lembar-pengesahan-en.tex}
+\cleardoublepage
+
+% Pernyataan keaslian
+\input{Init/pernyataan-keaslian.tex}
+\cleardoublepage
+\input{Init/pernyataan-keaslian-en.tex}
+\cleardoublepage
+
+% Nomor halaman pembuka dimulai dari sini
+\pagenumbering{roman}
+
+% Abstrak Bahasa Indonesia
+\input{abstrak/abstrak-id.tex}
+\cleardoublepage
+
+% Abstrak Bahasa Inggris
+\input{abstrak/abstrak-en.tex}
+\cleardoublepage
+
+% Kata pengantar
+\input{KataPengantar/kata-pengantar.tex}
+\cleardoublepage
+
+% Daftar isi
+\renewcommand*\contentsname{DAFTAR ISI}
+\addcontentsline{toc}{chapter}{\contentsname}
+\tableofcontents
+\cleardoublepage
+
+% Daftar gambar
+\renewcommand*\listfigurename{DAFTAR GAMBAR}
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\cleardoublepage
+
+% Daftar tabel
+\renewcommand*\listtablename{DAFTAR TABEL}
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\cleardoublepage
+
+% Nomor halaman isi dimulai dari sini
+\pagenumbering{arabic}

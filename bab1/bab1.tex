@@ -1,0 +1,50 @@
+
+\begin{spacing}{1.2}
+  \chapter{PENDAHULUAN}
+\end{spacing}
+
+
+\pagenumbering{arabic}
+\vspace{4ex}
+
+\section{Latar Belakang}
+Mobilitas adalah aspek penting dalam menunjang kehidupan sehari-hari yang memungkin-
+kan seseorang untuk menjalani berbagai aktivitas secara mandiri. Kemampuan untuk bergerak secara mandiri memungkinkan individu berpartisipasi dalam aktivitas sosial, ekonomi, dan budaya. Namun, bagi individu yang mengalami kelumpuhan atau gangguan mobilitas, kebutuhan untuk alat bantu gerak, seperti kursi roda, menjadi sangat penting. Data dari Organisasi Kesehatan Dunia (WHO) menunjukkan bahwa lebih dari 75 juta orang di seluruh dunia membutuhkan kursi roda, namun hanya sebagian kecil yang memiliki akses ke kursi roda yang memadai\cite{WHO2018}. 
+
+Kelumpuhan dapat disebabkan oleh berbagai kondisi, termasuk cedera tulang belakang, stroke, atau penyakit neurologis \cite{Nweke2018}. Dalam kondisi ini, individu kehilangan kemampuan untuk mengontrol gerakan tubuh mereka, yang secara signifikan mempengaruhi kemandirian dan aktivitas sehari-hari. Oleh karena itu, teknologi asistif seperti kursi roda telah berkembang dari waktu ke waktu untuk memenuhi kebutuhan mobilitas pengguna dengan berbagai tingkat kelumpuhan.
+
+Perkembangan kursi roda saat ini telah beralih dari desain manual menuju kursi roda yang lebih cerdas dan otonom, yang dilengkapi dengan teknologi terbaru untuk memberikan kebebasan bergerak yang lebih baik\cite{Lang2019}. Dalam beberapa dekade terakhir, konsep kursi roda cerdas telah mengalami kemajuan signifikan, terutama dengan integrasi teknologi seperti kontrol berbasis otak, sensorik, dan algoritma kecerdasan buatan.Penelitian oleh Choi,Chung, dan Oh menunjukkan bahwa kontrol gerak kursi roda elektrik yang diintegrasikandengan joystick dapat meningkatkan keselamatan dan kenyamanan pengguna\cite{447c913241944300b8fc43999ab23048}. Salah satu pendekatan inovatif adalah menggunakan deep learning dalam pengembangan sistem kendali kursi roda. YOLOv11 (You Only Look Once) adalah salah satu algoritma deteksi objek terbaru yang dapat diadaptasi untuk mengenali objek manusia sebagai penerapan sistem pengereman otomatis. LSTM (Long Short-Term Memory) digunakan sebagai algoritma pendekatan untuk mengenali pola gerakan sehingga pengguna dengan keterbatasan fisik dapat mengendalikan kursi roda mereka menggunakan gerakan tangan atau isyarat bahasa tubuh\cite{KIM2021}.
+
+SIBI (Sistem Isyarat Bahasa Indonesia) adalah sistem komunikasi visual yang digunakan oleh penyandang disabilitas pendengaran di Indonesia. Bahasa ini memanfaatkan berbagai gerakan tangan untuk mewakili kata atau konsep tertentu, yang memudahkan komunikasi antar pengguna\cite{Rani2019}. Dalam konteks pengembangan teknologi kursi roda cerdas, gesture SIBI menjadi salah satu metode potensial untuk meningkatkan kontrol dan aksesibilitas bagi penyandang disabilitas fisik yang menggunakan bahasa isyarat sebagai alat komunikasi sehari-hari . Implementasi gesture ini tidak hanya meningkatkan inklusivitas, tetapi juga memberikan alternatif kendali yang lebih intuitif bagi pengguna yang tidak mampu menggunakan metode konvensional seperti joystick atau tombol.
+
+Selain itu, implementasi LSTM (Long Short-Term Memory), yang merupakan jenis Recurrent Neural Network (RNN), memungkinkan sistem untuk mengenali pola gerakan secara lebih akurat dan responsif dalam pengendalian kursi roda\cite{Graves2019}. Kombinasi dari algoritma deep learning ini dapat memberikan solusi optimal bagi pengguna kursi roda yang tidak hanya membutuhkan mobilitas fisik tetapi juga sistem kendali yang adaptif dan responsif.
+
+Lebih jauh, pengembangan kursi roda cerdas yang dilengkapi dengan smart braking system bertujuan untuk meningkatkan keselamatan pengguna. Sistem pengereman otomatis ini dapat mendeteksi objek atau hambatan di sekitar pengguna dengan cepat dan melakukan pengereman secara otomatis, mengurangi risiko kecelakaan.
+
+Dengan demikian, penelitian ini bertujuan untuk mengembangkan sistem kendali kursi roda cerdas yang berbasis gesture SIBI dan smart braking system menggunakan YOLOv11 dan LSTM. Penggunaan teknologi ini diharapkan dapat memberikan solusi mobilitas yang lebih aman, efisien, dan inklusif bagi individu dengan kelumpuhan.
+\section{Rumusan Masalah}
+Berdasarkan hal yang telah dipaparkan di latar belakang, meskipun bahasa isyarat seperti SIBI telah diakui sebagai bentuk komunikasi bagi penyandang disabilitas pendengaran dan fisik, implementasinya dalam pengendalian kursi roda masih minim. Tidak banyak sistem kursi roda yang mendukung pengendalian berbasis gesture, terutama gesture bahasa isyarat yang spesifik. Maka dari itu diperlukannya sebuah sistem untuk mendeteksi gesture SIBI dan sistem pengereman otomatis.
+\section{Batasan Masalah atau Ruang Lingkup}
+
+Terdapat beberapa Batasan masalah untuk memperjelas penelitian yang dilakukan. Batasan-batasannya adalah sebagai berikut
+
+\begin{enumerate}
+    \item Batasan pada penggunaan gesture SIBI sebagai metode utama kendali kursi roda cerdas.
+    \item Penelitian dibatasi pada penggunaan LSTM untuk pengenalan dan deteksi gesture tangan SIBI yang dikombinasikan dengan perangkat keras seperti kamera.
+    \item Penggunaan LSTM dibatasi pada pemrosesan urutan data gesture yang diambil dari kamera.
+    \item Fokus pada pengembangan smart braking system untuk meningkatkan keselamatan pengguna kursi roda dalam mendeteksi objek di sekitar kursi roda dan melakukan pengereman otomatis. 
+    \item Sistem smart breaking ini dibatasi pada deteksi manusia di lingkungan sekitarnya tanpa memperhitungkan aspek lain seperti objek-objek yang ada di lingkungan pengujian.
+    \item Penelitian difokuskan pada pengembangan dan integrasi antara perangkat keras (kamera, motor kursi roda) dan perangkat lunak kontrol kursi roda dan smart breaking system.
+    \item Pengontrol kursi roda akan diimplementasikan untuk memberikan respon sesuai dengan gestur yang dipanggil dan berhenti otomatis ketika mendeteksi manusia di depannya.
+\end{enumerate}
+
+\section{Tujuan}
+
+% Ubah paragraf berikut sesuai dengan tujuan penelitian dari tugas akhir
+Tujuan dari penelitian ini adalah membuat sebuah sistem untuk mendeteksi gestur SIBI dan sistem pengereman otomatis.
+
+\section{Manfaat}
+
+% Ubah paragraf berikut sesuai dengan tujuan penelitian dari tugas akhir
+Manfaat dari penelitian ini adalah membuat sebuah sistem untuk mendeteksi gestur SIBI dan sistem pengereman otomatis.
+

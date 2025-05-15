@@ -1,0 +1,78 @@
+\title{Buku Tugas Akhir ITS}
+\author{Musk, Elon Reeve}
+% Pengaturan ukuran teks dan bentuk halaman dua sisi
+\documentclass[12pt,twoside]{report}
+\input{Init/Init.tex}
+%========================================
+%Template ini di modifikasi oleh departement Teknik Komputer ITS
+%dari template yang telah dibuat Musk, Elon Reeve
+%=======================================
+
+%=======================================
+%Direktori Penting 
+%1. Init : Berisi File penting terkait dengan konfigurasi .
+%            Isi dari direktori ini jangan diubah
+%2.KataPengantar 
+%3. Abstrak : berisi abstrak untuk bahasa indonesia dan bahasa inggris 
+%4. Bab1-Bab5 : Isi tiap-tiap bab
+%5. Pustaka : Berisi daftar pustaka 
+%6. Biografi penulis 
+%=======================================
+
+%========================================
+% Identitas Mahasiswa} 
+%========================================
+\NamaMahasiswa{I Putu Deva Febriana}{5024 21 1016}
+
+%========================================
+%Identitas Tugas Akhir
+%========================================
+\KodeMataKuliah{EC234801}
+\JudulTAInd{PENGEMBANGAN SISTEM KENDALI KURSI RODA BERBASIS \emph{SIBI} DAN \emph{BRAKING SYSTEM} MENGGUNAKAN \emph{LSTM} dan \emph{YOLOv11}}
+\JudulTAEng{DEVELOPMENT OF WHEELCHAIR CONTROL SYSTEM BASED ON SIBI AND BRAKING SYSTEM USING LSTM AND YOLOv11}
+\Tempat{Surabaya}
+
+%========================================
+% Daftar Pembimbing 
+%========================================
+\PembimbingSatu{Dr. Supeno Mardi Susiki Nugroho,S.T.,M.T.}{19700313199512 1 001} 
+\PembimbingDua{Dr. Eko Mulyanto Yuniarno,S.T.,M.T.}{19680601199512 1 009 } 
+
+%========================================
+% Daftar Penguji
+%========================================
+\PengujiSatu{Prof. Dr. I Ketut Eddy Purnama, S.T., M.T.}{19690730199512 1 001} 
+\PengujiDua{Dr. Susi Juniastuti, S.T., M.Eng.}{19650618199903 2 001}
+\PengujiTiga{Dr. Surya Sumpeno , S.T., M.Sc.} {19690613199702 1 003}
+
+
+
+%========================================
+%Identitas Departement dan fakultas
+%========================================
+\KepalaDepartemen{Dr. Arief Kurniawan, S.T., M.T.}{19740907200212 1 001} 
+\Departemen{Teknik Komputer}{Computer Engineering}
+\Fakultas{Teknologi Elektro dan Informatika Cerdas}{Intelligent Electrical And Informatics Technology}
+\SingkatanFakultas{FTEIC}{FIEI}
+
+
+% Isi keseluruhan dokumen
+\begin{document}
+\input{Init/TataLetak.tex} 
+
+% Bab 1 pendahuluan
+\input{bab1/bab1.tex}
+\cleardoublepage
+\input{bab2/bab2.tex}
+\cleardoublepage
+\input{bab3/bab3.tex}
+\cleardoublepage
+\input{bab4/bab4.tex}
+\cleardoublepage
+\input{bab5/bab5.tex}
+\cleardoublepage
+\input{Init/DaftarPustaka.tex}
+\cleardoublepage
+\input{BiografiPenulis/biografi-penulis.tex}
+\cleardoublepage
+\end{document}

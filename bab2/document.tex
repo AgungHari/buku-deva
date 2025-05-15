@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{cite}
+
+\begin{document}
+	
+	\begin{longtable}{|p{3cm}| p{7cm} | p{7cm} | p{7cm}|}
+		\caption{Posisi dan kontribusi penelitian}\label{table:Posisidankontribusipenelitian} \\ \hline
+		\textbf{Topik riset Registrasi} & 
+		\textbf{Metode} & 
+		\textbf{Kontribusi Peneliti Lain} &
+		\textbf{Kontribusi Peneliti} \\ \hline
+		\endfirsthead
+		\caption[]{Posisi dan kontribusi penelitian \textit{(Lanjutan..)}}\\ \hline
+		\textbf{Topik riset Registrasi} & 
+		\textbf{Metode} & 
+		\textbf{Kontribusi Peneliti Lain} &
+		\textbf{Kontribusi Peneliti} \\ \hline
+		\endhead
+		\multicolumn{4}{r}{{\textit{Tabel bersambung..}}} \\ \hline
+		\endfoot
+		\endlastfoot 
+		Ekstraksi feature & Kurvature pada suatu titik dihitung pada beberapa skala dengan fitting permukaan ke titik lokal pada berbagai macam ukuran. (Ho dan Gibbins, 2009) & Multi-scale Feature Extraction from 3D Meshes and Unstructured Point Cloud & \\ \hline 
+		Estimasi vektor normal & Fitting tangen vektor pada data titik untuk menentukan vektor normal berbasis local voronoy mesh. (OuYang dan Feng, 2005) & Metoda baru untuk estimasi vektor normal. & \\ \hline 
+		Estimasi principal direction & The Adjacent-Normal Cubic Approximation (Goldfeather dan Interrante, 2004) & Estimasi principal direction dan vektor normal pada permukaan dengan noise yang tinggi. &\\ \hline 
+		Registrasi berbasis fitur permukaan. & Normal distribution transform. (Pathak, Birk, Vaskevicius, dan Poppinga, 2010) & Online registrasi pose untuk menentukan posisi robot. & \\ \hline 
+		Registrasi 3D berbasis warna. & Warna RGB (Johnson dan Kang, 1997). (Douadi dkk., 2006) & Menggantikan fitur geometri ketika informasi geometri permukaan tidak mencukupi. & \\ \hline 
+		& Registrasi berbasis warna HSV. (Druon, Aldon, dan Crosinier, 2006) & Registrasi tidak dipengaruhi oleh intensitas warna. & \\ \hline 
+		& Registrasi dengan Modified color ICP kombinasi antara warna RGB dengan jarak ecludiean. (Joun, Ang, Kang, Chung, dan Yu, 2009) & Registrasi untuk lingkungan 3D. & \\ \hline 
+		Registrasi Berbasis geometri permukaan. & Registrasi dengan angular invariant feature. (Jiang dkk., 2009) & \textit{Angular invariant feature} invariant terhadap rotasi dan skala. & \\ \hline 
+		& Point Feature Histograms (PFH) robust multi-dimensional features. (Rusu, Blodow, Marton, Soos, dan Beetz, 2007) & Kombinasi curvature, vektor normal, dan vektor principal direction. & \\ \hline 
+		& Fitting quadratic surface (Chen dan Bhanu, 2007) & Permukaan lokal sebagai deskriptor untuk kombinasi curvature, vektor normal, dan vektor principal direction. & \\ \hline 
+		& & & Registrasi Citra 2D multiview untuk penangkap gerak manusia Semina Sesindo 2010 (Yuniarno, Mardi, Sumpeno, dan Hariadi, 2010) \\ \hline 
+		& & & Registrasi permukaan berbasis surface curvature feature. Jurnal Jatit (Yuniarno, Hariadi, dan Purnomo, 2013a) \\ \hline 
+		Outlier Removal & Tiga konstrain untuk memperoleh korspondensi akurat. (Liu, 2008) & Korespondensi yang akurat & \\ \hline 
+		& Dua konstrain untuk memperoleh korspondensi akurat. (Xin dan Pu, 2010) & Perbaikan tiga konstrain yang diusulkan oleh Liu dengan meletakan origin ke titik berat permukaan. & \\ \hline 
+		& & & Perbaikan korespondensi dengan rigid constraint berbasis dua titik referensi dan surface curvature feature Jurnal Kursor (Yuniarno, Hariadi, dan Purnomo, 2013b) \cite{Brathwaite2009} \\ \hline 
+	\end{longtable}
+	
+\end{document}
