@@ -465,9 +465,9 @@ Pada tabel \ref{tb:TabelLSTMNUC} merupakan hasil dari pengujian model LSTM berda
   9  & 14,42 &  & 19 & 15,92 &  & 29 & 12,43 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
   10 & 12,42 &  & 20 & 12,86 &  & 30 & 11,56 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
   \end{tabular}
-  \end{table}
+\end{table}
 
-Pada pengujian menggunakan model LSTM pada laptop ini, hasil yang didapatkan sangat baik dimana FPS menyentuh angka yang cukup tinggi. Hal ini menunjukan bahwa sistem dapat berjalan dengan baik dan efisien, hal ini akan menjadi sangat penting bahwa output klasifikasi gestur dari model LSTM akan digunakan dalam sistem kendali kursi roda.
+Pada pengujian menggunakan model LSTM pada NUC ini, hasil yang didapatkan sangat baik dimana FPS menyentuh angka yang cukup tinggi. Hal ini menunjukan bahwa sistem dapat berjalan dengan baik dan efisien, hal ini akan menjadi sangat penting bahwa output klasifikasi gestur dari model LSTM akan digunakan dalam sistem kendali kursi roda.
 
 \newpage
 \section{Pengujian berdasarkan hasil respond time}
@@ -575,37 +575,107 @@ Pada Tabel refxxxxxx Rata - rata waktu delay yang didapatkan adalah 0.2494 detik
   \end{tabular}
   \end{table}
 
-  Pada Tabel refxxxxxx Rata - rata waktu delay yang didapatkan adalah 0.2494 detik dari data yang sudah didapatkan dari pengujian NUC, adapun hasil nya dapat dilihat pada tabel dibawah. Adapun nilai inference rata-rata yang didapatkan adalah  139.4899 ms atau 0.1394899 detik.
+Pada Tabel refxxxxxx Rata - rata waktu delay yang didapatkan adalah 0.2494 detik dari data yang sudah didapatkan dari pengujian NUC, adapun hasil nya dapat dilihat pada tabel dibawah. Adapun nilai inference rata-rata yang didapatkan adalah  139.4899 ms atau 0.1394899 detik.
 
 
-\subsection{Pengujian Sistem Pengereman Otomatis pada jarak 150 cm}
+\newpage
+\subsection{Performa Sistem Pengereman Otomatis}
 
-Pada pengujian ini dilakukan pengetesan terhadap kursi roda dalam melakukan pengereman otomatis. Pengetesan ini akan dilakukan Pada Tower 2 ITS. Manusia yang dideteksi berdiri tegak. Adapun pengujian ini bertujuan untuk mengetahui keberhasilan pengereman dalam 10 sampel pengujian. Kursi roda sudah diatur agar tidak membahayakan subjek penelitian. 
+Pada pengujian ini dilakukan pengetesan terhadap kursi roda dalam melakukan pengereman otomatis. Pengetesan ini akan dilakukan Pada Tower 2 ITS. Manusia yang dideteksi berdiri tegak. Adapun pengujian ini bertujuan untuk mengetahui keberhasilan pengereman dalam 10 sampel pengujian. Kursi roda sudah diatur agar tidak membahayakan subjek penelitian. Setiap model akan diuji untuk mengetahui performa sistem pengereman, serta mengetahui model manakah yang terbaik. Gambar \ref{fig:Fotoperforma} merupakan sampel pengujian yang akan dijadikan subjek penelitian.
+
+\begin{figure} [H] \centering
+  \includegraphics[scale=0.3]{gambar/performakeberhasilan.jpg}
+  \caption{Sampel Performa Pengereman Otomatis}
+  \label{fig:Fotoperforma}
+\end{figure}
+
+Selanjutnya hasil dari performa pengereman otomatis ini dicatat dalam tabel. Agar memudahkan pembaca dalam memahami isi tabel diberikan warna sesuai dengan hasil yang didapatkan. Berikut merupakan hasil pengujian tersebut.
 
 \begin{table}[H]
   \centering
-  \caption{Tabel Performa Keberhasilan Pengereman Otomatis}
-  \label{tb:gemeter}
+  \caption{Tabel Performa Keberhasilan Pengereman Otomatis menggunakan YOLOv11}
+  \label{tb:tabelyolov11performa}
   \begin{tabular}{|c|c|}
   \hline
-  Percobaan & Hasil                                                               \\ \hline
-  1         & \cellcolor[HTML]{9AFF99}Kursi Roda Berhasil Berhenti              \\ \hline
-  2         & \cellcolor[HTML]{9AFF99}Kursi Roda Berhasil Berhenti              \\ \hline
-  3         & \cellcolor[HTML]{9AFF99}Kursi Roda Berhasil Berhenti              \\ \hline
-  4        & \cellcolor[HTML]{9AFF99}Kursi Roda Berhasil Berhenti              \\ \hline
+  Percobaan & Hasil                                                \\ \hline
+  1         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  2         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  3         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  4         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  5         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  6         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  7         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  8         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  9         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  10        & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  \end{tabular}
+  \end{table}
+
+Dari hasil yang didapatkan pada tabel \ref{tb:tabelyolov11performa} pada 10 kali sampel percobaan didapatkan rasio keberhasilan sebesar 100\% yang menunjukan bahwa sistem pengereman otomatis menggunakan model YOLOv11 dapat berjalan dengan sempurna.
+
+\begin{table}[H]
+  \centering
+  \caption{Tabel Performa Keberhasilan Pengereman Otomatis menggunakan YOLOv11}
+  \label{tb:tabelyolov8performa}
+  \begin{tabular}{|c|c|}
+    \hline
+    Percobaan & Hasil                                                \\ \hline
+    1         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+    2         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+    3         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+    4         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+    5         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+    6         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+    7         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+    8         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+    9         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+    10        & \cellcolor[HTML]{FD6864}Kursi Roda Gagal Berhenti    \\ \hline
+    \end{tabular}
+  \end{table}
+
+Dari hasil yang didapatkan pada tabel \ref{tb:tabelyolov8performa} pada 10 kali sampel percobaan didapatkan rasio keberhasilan sebesar 90\%. Adapun pada percobaan ke 10 sistem gagal dalam melakukan pengereman otomatis. Hal ini disebabkan oleh 2 faktor yang pertama adalah bounding box yang dihasilkan oleh YOLOv8 tidak sekonsisten YOLOv11, dan yang kedua adalah suhu laptop yang meningkat yang mengurangi performa sistem.
+
+\begin{table}[H]
+  \centering
+  \caption{Tabel Performa Keberhasilan Pengereman Otomatis menggunakan YOLOv12}
+  \label{tb:tabelyolov12performa}
+  \begin{tabular}{|c|c|}
+  \hline
+  Percobaan & Hasil                                                \\ \hline
+  1         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  2         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  3         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  4         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  5         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  6         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  7         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  8         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  9         & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
+  10        & \cellcolor[HTML]{34FF34}Kursi Roda Berhasil Berhenti \\ \hline
   \end{tabular}
 \end{table}
 
-Dari hasil yang didapatkan pada tabel refxxx pada 10 kali sampel percobaan didapatkan rasio keberhasilan sebesar 100\% yang menunjukan bahwa sistem pengereman otomatis pada jarak 150 cm dapat berjalan dengan baik dan sesuai dengan yang diharapkan.
+Dari hasil yang didapatkan pada tabel \ref{tb:tabelyolov12performa} pada 10 kali sampel percobaan didapatkan rasio keberhasilan sebesar 100\% yang menunjukan bahwa sistem pengereman otomatis menggunakan model YOLOv12 dapat berjalan dengan sempurna.
 
-Untuk mengetahui lebih dalam performa dari model dalam melakukan pengereman maka diperlukannya Uji akurasi dari sistem pengereman otomatis ini. Uji akurasi ini dilakukan dengan cara menghitung jarak yang didapatkan pada sistem dan jarak asli menggunakan meteran.
+\subsection{Pengujian Akurasi Sistem Pengereman Otomatis}
+Untuk mengetahui lebih dalam performa dari model dalam melakukan pengereman maka diperlukannya Uji akurasi dari sistem pengereman otomatis ini. Uji akurasi ini dilakukan dengan cara menghitung jarak yang didapatkan pada sistem dan jarak asli menggunakan meteran. Gambar \ref{fig:FotoPengambilanakurasi} telah dilakukan pengukuran menggunakan meteran untuk mendapatkan jarak saat terjadi pengereman dan juga mengambil jarak pada sistem dengan mendokumentasikan hasil dari sistem dengan menggunakan OBS.
 
+\begin{figure} [H] 
+  \centering
+  \includegraphics[scale=0.3]{gambar/pengujianjarakdeva.jpg}
+  \caption{Hasil Pengukuran Jarak Pengereman Otomatis}
+  \label{fig:FotoPengambilanakurasi}
+\end{figure}
 
+Jarak yang telah diukur lalu dibandingkan sehingga menghasilkan Tabel \ref{tb:akurasijarak} yang berisi nilai jarak pengukuran nyata saat pengereman (Real Distance), Jarak pada sistem yang telah dicatat (System Distance), Error nyata, dan error sistem. Adapun tujuan dilakukannya pengujian ini yaitu untuk mengetahui kesalahan jarak yang dihasilkan dari sistem dan juga mengetahui penyebab kesalahan pengukuran jarak tersebut.
 
-  \begin{table}[]
+  \begin{table}[H]
+    \centering
+    \caption{Tabel Hasil Pengukuran Jarak Pengereman Otomatis}
+    \label{tb:akurasijarak}
     \begin{tabular}{|l|l|l|l|l|}
     \hline
-    Breaking Distance & Real Distance & System Distance & Real error & System Error \\ \hline
+    Braking Distance & Real Distance & System Distance & Real error & System Error \\ \hline
     150cm             & 169cm         & 180cm           & 19cm       & 30cm         \\ \hline
                       &               &                 &            &              \\ \hline
                       &               &                 &            &              \\ \hline
