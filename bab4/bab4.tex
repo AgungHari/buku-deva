@@ -577,6 +577,106 @@ Pada Tabel refxxxxxx Rata - rata waktu delay yang didapatkan adalah 0.2494 detik
 
 Pada Tabel refxxxxxx Rata - rata waktu delay yang didapatkan adalah 0.2494 detik dari data yang sudah didapatkan dari pengujian NUC, adapun hasil nya dapat dilihat pada tabel dibawah. Adapun nilai inference rata-rata yang didapatkan adalah  139.4899 ms atau 0.1394899 detik.
 
+\subsection{Pengujian Kesesuaian Jarak Pengereman Otomatis}
+Pengujian ini dilakukan pengetasan terhadap model dalam menghasilkan jarak berdasarkan hasil perhitungan pada \emph{Bounding Box}. Pengujian ini dilakukan dengan membandingkan jarak objek asli dengan jarak yang dihasilkan sistem pada Laptop dan Intel NUC terhadap manusia yang berdiri tegak. Kalibrasi telah dilakukan pada jarak 150 cm jarak ini diambil atas dasar visibilitas bounding box. Sehingga didapatkan nilai Focal Length sebesar 480. Nilai-nilai tersebut akan digunakan dalam pengujian kesesuaian jarak pada 150 cm dan 130 cm. Adapun tujuan dilakukan pengujian ini untuk menguji kemampuan model dalam mengukur jarak.
+
+Pengujian ini dilakukan menggunakan alat ukur meteran yang ditancapkan pada kamera dan ditarik menuju peneliti untuk mendapatkan jarak. Nilai tersebut akan dihitung untuk diambil nilai rata rata \emph{difference} atau perbedaan yang dihasilkan dari sistem terhadap pengukuran nyata.
+
+\subsection{Pengujian Kesesuaian Jarak Model YOLOv11 pada 150cm}
+
+Pada pengujian pertama jarak yang digunakan adalah 150cm atau 1.5m pada objek nyata yang jaraknya telah diukur sehingga bisa dilakukan perbandingan dan didapatkan tabel \ref{tb:pengukurankesusaian150cm} untuk jarak menggunakan YOLOv11 \emph{Bounding Box}.
+
+\begin{table}[H]
+  \centering
+  \caption{Hasil Pengujian kesesuaian Jarak YOLOv11 150 cm}
+  \label{tb:pengukurankesusaian150cm}
+    \begin{tabular}{|c|c|l|}
+    \hline
+    \textit{Distance} & \textit{Yolo Bbox Distance} & \textit{Difference} \\ \hline
+    150cm             & 151cm                       & 1cm                 \\ \hline
+    150cm             & 151cm                       & 1cm                 \\ \hline
+    150cm             & 150cm                       & 0cm                 \\ \hline
+    150cm             & 151cm                       & 1cm                 \\ \hline
+    150cm             & 152cm                       & 2cm                 \\ \hline
+    150cm             & 153cm                       & 3cm                 \\ \hline
+    150cm             & 151cm                       & 1cm                 \\ \hline
+    150cm             & 150cm                       & 0                   \\ \hline
+    150cm             & 150cm                       & 0                   \\ \hline
+    150cm             & 152cm                       & 2cm                 \\ \hline
+  \end{tabular}
+\end{table}
+
+  \subsection{Pengujian Kesesuaian Jarak Model YOLOv11 pada 130 cm}
+
+  Pada pengujian pertama jarak yang digunakan adalah 130cm atau 1.3m pada objek nyata yang jaraknya telah diukur sehingga bisa dilakukan perbandingan dan didapatkan tabel \ref{tb:pengukurankesusaian130cm} untuk jarak menggunakan YOLOv11 \emph{Bounding Box}.
+  
+  \begin{table}[H]
+    \centering
+    \caption{Hasil Pengujian kesesuaian Jarak YOLOv11 130cm}
+    \label{tb:pengukurankesusaian130cm}
+    \begin{tabular}{|c|c|l|}
+      \hline
+      \textit{Distance} & \textit{Yolo Bbox Distance} & \textit{Difference} \\ \hline
+      130cm             & 128cm                       & 2cm                 \\ \hline
+      130cm             & 128cm                       & 2cm                 \\ \hline
+      130cm             & 129cm                       & 1cm                 \\ \hline
+      130cm             & 127cm                       & 3cm                 \\ \hline
+      130cm             & 130cm                       & 0                   \\ \hline
+      130cm             & 130cm                       & 0                   \\ \hline
+      130cm             & 131cm                       & 1cm                 \\ \hline
+      130cm             & 132cm                       & 2cm                 \\ \hline
+      130cm             & 131cm                       & 1cm                 \\ \hline
+      130cm             & 130cm                       & 0                   \\ \hline
+      \end{tabular}
+    \end{table}
+
+\subsection{Pengujian Kesesuaian Jarak Model YOLOv8 pada 150cm}
+
+Pada pengujian pertama jarak yang digunakan adalah 150cm atau 1.5m pada objek nyata yang jaraknya telah diukur sehingga bisa dilakukan perbandingan dan didapatkan tabel \ref{tb:pengukurankesusaian150cmv8} untuk jarak menggunakan YOLOv8 \emph{Bounding Box}.
+    
+    \begin{table}[H]
+      \centering
+      \caption{Hasil Pengujian kesesuaian Jarak YOLOv8 150 cm}
+      \label{tb:pengukurankesusaian150cmv8}
+      \begin{tabular}{|c|c|l|}
+        \hline
+        \textit{Distance} & \textit{Yolo Bbox Distance} & \textit{Difference} \\ \hline
+        150cm             & 154cm                       & 4cm                 \\ \hline
+        150cm             & 142cm                       & 8cm                 \\ \hline
+        150cm             & 144cm                       & 6cm                 \\ \hline
+        150cm             & 144cm                       & 6cm                 \\ \hline
+        150cm             & 151cm                       & 1cm                 \\ \hline
+        150cm             & 150cm                       & 0                   \\ \hline
+        150cm             & 149cm                       & 1cm                 \\ \hline
+        150cm             & 141cm                       & 9cm                 \\ \hline
+        150cm             & 151cm                       & 1cm                 \\ \hline
+        150cm             & 147cm                       & 3cm                 \\ \hline
+        \end{tabular}
+      \end{table}
+    
+\subsection{Pengujian Kesesuaian Jarak Model YOLOv8 pada 130 cm}
+    
+Pada pengujian pertama jarak yang digunakan adalah 130cm atau 1.3m pada objek nyata yang jaraknya telah diukur sehingga bisa dilakukan perbandingan dan didapatkan tabel \ref{tb:pengukurankesusaian130cmv8} untuk jarak menggunakan YOLOv8 \emph{Bounding Box}.
+      
+      \begin{table}[H]
+        \centering
+        \caption{Hasil Pengujian kesesuaian Jarak YOLOv8 130cm}
+        \label{tb:pengukurankesusaian130cmv8}
+        \begin{tabular}{|c|c|l|}
+          \hline
+          \textit{Distance} & \textit{Yolo Bbox Distance} & \textit{Difference} \\ \hline
+          130cm             & 129cm                       & 1cm                 \\ \hline
+          130cm             & 127cm                       & 3cm                 \\ \hline
+          130cm             & 128cm                       & 2cm                 \\ \hline
+          130cm             & 122cm                       & 8cm                 \\ \hline
+          130cm             & 129cm                       & 1cm                 \\ \hline
+          130cm             & 130cm                       & 0                   \\ \hline
+          130cm             & 130cm                       & 0                   \\ \hline
+          130cm             & 134cm                       & 4cm                 \\ \hline
+          130cm             & 132cm                       & 4cm                 \\ \hline
+          130cm             & 132cm                       & 2cm                 \\ \hline
+          \end{tabular}
+        \end{table}
 
 \newpage
 \subsection{Performa Sistem Pengereman Otomatis}
