@@ -192,3 +192,430 @@ Kiri   & 1.00 & 1.00 & 1.00 & 7  \\
 Tabel 4.2 menunjukkan hasil evaluasi model klasifikasi untuk lima kelas, yaitu Stop, Maju, Mundur, Kanan, dan Kiri. Dari tabel tersebut terlihat bahwa model mencapai nilai precision, recall, dan f1-score sebesar 1.00 pada semua kelas, 
 yang berarti model mampu mengklasifikasikan setiap kelas dengan sempurna tanpa kesalahan. Support menunjukkan jumlah data uji pada masing-masing kelas, dengan total 45 sampel yang tersebar di kelima kelas tersebut. Nilai accuracy sebesar 1.00 
 mengindikasikan bahwa model memiliki akurasi 100\% secara keseluruhan pada data uji ini. Selain itu, nilai macro average dan weighted average yang juga 1.00 memperkuat bahwa performa model sangat baik dan konsisten di seluruh kelas.
+
+\section{Pengujian Berdasarkan FPS}
+Pengujian FPS akan dilakukan pada dua device yang pertama adalah pengujian pada device Laptop, dan pengujian pada device NUC. Dalam pengujian ini akan diambil nilai FPS sebanyak 30 kali yang sesuai dengan output sistem dan sudah diolah pada bagian sebelumnya.
+
+Pada pengujian ini akan diambil nilai FPS pada laptop dan FPS pada NUC. Spesifikasi laptop yang digunakan untuk pengujian ini pada tabel  :
+
+\begin{longtable}{|c|c|}
+  \caption{Spesifikasi Laptop}
+  \label{tb:Spesifikasi Laptop}                                   \\
+  \hline
+  \rowcolor[HTML]{C0C0C0}
+  \textbf{Komponen} & \textbf{Spesifikasi}  \\
+  \hline
+  CPU            & Intel(R) Core(TM) i5-10300H CPU @2.50GHz(8CPU)        \\ \hline
+  RAM            & 16 GB DDR4-2666 SDRAM        \\ \hline
+  GPU            & NVIDIA® GeForce RTX™ 2060 with Max-Q design           \\ \hline
+  \hline
+\end{longtable}
+
+Spesifikasi NUC yang digunakan untuk pengujian ini pada tabel  :
+
+\begin{longtable}{|c|c|}
+    \caption{Spesifikasi NUC}
+    \label{tb:Spesifikasi NUC}                             \\
+    \hline   
+    \rowcolor[HTML]{C0C0C0}
+    \textbf{Komponen} & \textbf{Spesifikasi} \\
+    \hline
+  CPU            &  Intel® Core™ i7-1165G7        \\
+  RAM            & 32 GBLPDDR4        \\
+  OS            & Windows 11 Home Single Language           \\
+  \hline
+\end{longtable}
+
+Baik system kontrol maupun system pengereman otomatis akan diambil nilai fpsnya, selain itu setiap jenis arsitektur YOLO juga akan dibandingkan untuk menilai efisiensi sistem berdasarkan jenis arsitektur YOLO yang digunakan. Pengujian ini dilakukan dengan cara menjalankan sistem pada laptop dan NUC, kemudian merekam hasil dari pengujian tersebut. Hasil dari pengujian ini akan ditampilkan dalam bentuk tabel.
+
+\newpage
+
+\subsection{Pengujian Model YOLOv11 Berdasarkan FPS pada Laptop}
+
+Pengujian dilakukan pada laptop dengan spesifikasi yang telah disebutkan sebelumnya. Pengujian ini dilakukan dengan cara menjalankan sistem pada laptop dan merekam hasil dari pengujian tersebut. Hasil dari pengujian ini akan ditampilkan dalam bentuk tabel. Gambar \ref{fig:Foto pengujian fps laptop} merupakan gambar pengambilan data fps pada laptop.
+
+\begin{figure} [H] \centering
+  \includegraphics[scale=0.3]{gambar/devafps.jpg}
+  \caption{Pengujian FPS pada Laptop}
+  \label{fig:Foto pengujian fps laptop}
+\end{figure}
+
+Pada tabel \ref{tb:TabelYoloLaptop} merupakan hasil dari pengujian model YOLOv11 berdasarkan FPS pada Laptop. Dari hasil tersebut didapatkan rata rata FPS sebesar 24,969 , dengan nilai tertinggi FPS sebesar 35,81 dan nilai terendah sebesar 12,8.
+
+\begin{table}[H]
+  \caption{Nilai Pengujian Model YOLOv11 Berdasarkan FPS pada Laptop} 
+  \label{tb:TabelYolov11Laptop}
+  \centering
+  \begin{tabular}{|l|l|l|l|l|l|l|l|}
+  \cline{1-2} \cline{4-5} \cline{7-8}
+  No & FPS   &  & No & FPS   &  & No & FPS   \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  1  & 21,8  &  & 11 & 21,82 &  & 21 & 23,32 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  2  & 20,89 &  & 12 & 20,89 &  & 22 & 23,89 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  3  & 25,7  &  & 13 & 17,9  &  & 23 & 21,18 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  4  & 12,8  &  & 14 & 23,57 &  & 24 & 31,33 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  5  & 23,32 &  & 15 & 21,77 &  & 25 & 30,38 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  6  & 34,57 &  & 16 & 17,34 &  & 26 & 29,49 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  7  & 21,33 &  & 17 & 26,39 &  & 27 & 33,42 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  8  & 35,81 &  & 18 & 19,28 &  & 28 & 32,34 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  9  & 21,8  &  & 19 & 32,34 &  & 29 & 28,31 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  10 & 24,45 &  & 20 & 29,54 &  & 30 & 22,12 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  \end{tabular}
+  \end{table}
+
+Pada pengujian menggunakan model YOLOv11 pada laptop ini, hasil yang didapatkan sangat baik dimana FPS menyentuh angka yang cukup tinggi. Hal ini menunjukan bahwa sistem dapat berjalan dengan baik dan efisien, hal ini akan menjadi sangat penting bahwa output dari model YOLOv11 akan menjadi variabel utama dalam sistem pengereman otomatis.
+
+\subsection{Pengujian Model YOLOv8 Berdasarkan FPS pada Laptop}
+
+Pengujian dilakukan pada laptop dengan spesifikasi yang telah disebutkan sebelumnya. Pengujian ini dilakukan dengan cara menjalankan sistem pada laptop dan merekam hasil dari pengujian tersebut. Hasil dari pengujian ini akan ditampilkan dalam bentuk tabel. Gambar \ref{fig:Foto pengujian fps laptop} merupakan gambar pengambilan data fps pada laptop.
+
+Pada tabel \ref{tb:TabelYoloLaptop} merupakan hasil dari pengujian model YOLOv8 berdasarkan FPS pada Laptop. Dari hasil tersebut didapatkan rata rata FPS sebesar 27.xxx, dengan nilai tertinggi FPS sebesar 30.xxx dan nilai terendah sebesar 19.xxx.
+
+\begin{table}[H]
+  \caption{Nilai Pengujian Model YOLOv8 Berdasarkan FPS pada Laptop} 
+  \label{tb:TabelYolov8Laptop}
+  \centering
+  \begin{tabular}{|l|l|l|l|l|l|l|l|}
+  \cline{1-2} \cline{4-5} \cline{7-8}
+  No & FPS  &  & No & FPS  &  & No & FPS  \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  1  & 6,68 &  & 11 & 6,24 &  & 21 & 5,12 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  2  & 7,43 &  & 12 & 4,77 &  & 22 & 8,43 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  3  & 6,68 &  & 13 & 7,43 &  & 23 & 6,73 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  4  & 8,89 &  & 14 & 8,36 &  & 24 & 8,36 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  5  & 6,08 &  & 15 & 6,68 &  & 25 & 6,43 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  6  & 7,43 &  & 16 & 7,23 &  & 26 & 5,33 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  7  & 8,36 &  & 17 & 4,12 &  & 27 & 6,59 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  8  & 5,12 &  & 18 & 6,88 &  & 28 & 7,1  \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  9  & 6,14 &  & 19 & 7,48 &  & 29 & 5,43 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  10 & 7,87 &  & 20 & 7,42 &  & 30 & 6,65 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  \end{tabular}
+  \end{table}
+
+Pada pengujian menggunakan model YOLOv8 pada laptop ini, hasil yang didapatkan sangat baik dimana FPS menyentuh angka yang cukup tinggi. Hal ini menunjukan bahwa sistem dapat berjalan dengan baik dan efisien, hal ini akan menjadi sangat penting bahwa output dari model YOLOv8 akan menjadi variabel utama dalam sistem pengereman otomatis.
+
+\subsection{Pengujian Model YOLOv12 Berdasarkan FPS pada Laptop}
+
+Pengujian dilakukan pada laptop dengan spesifikasi yang telah disebutkan sebelumnya. Pengujian ini dilakukan dengan cara menjalankan sistem pada laptop dan merekam hasil dari pengujian tersebut. Hasil dari pengujian ini akan ditampilkan dalam bentuk tabel. Gambar \ref{fig:Foto pengujian fps laptop} merupakan gambar pengambilan data fps pada laptop.
+
+Pada tabel \ref{tb:TabelYoloLaptop} merupakan hasil dari pengujian model YOLOv8 berdasarkan FPS pada Laptop. Dari hasil tersebut didapatkan rata rata FPS sebesar 27.xxx, dengan nilai tertinggi FPS sebesar 30.xxx dan nilai terendah sebesar 19.xxx.
+
+\begin{table}[H]
+  \centering
+  \caption{Nilai Pengujian Model YOLOv12 Berdasarkan FPS pada Laptop} 
+  \label{tb:TabelYolov12xLaptop}
+  \begin{tabular}{|l|l|l|l|l|l|l|l|}
+  \cline{1-2} \cline{4-5} \cline{7-8}
+  No & FPS &  & No & FPS &  & No & FPS \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  1  &     &  & 11 &     &  & 21 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  2  &     &  & 12 &     &  & 22 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  3  &     &  & 13 &     &  & 23 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  4  &     &  & 14 &     &  & 24 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  5  &     &  & 15 &     &  & 25 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  6  &     &  & 16 &     &  & 26 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  7  &     &  & 17 &     &  & 27 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  8  &     &  & 18 &     &  & 28 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  9  &     &  & 19 &     &  & 29 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  10 &     &  & 20 &     &  & 30 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  \end{tabular}
+  \end{table}
+
+Pada pengujian menggunakan model YOLOv12 pada laptop ini, hasil yang didapatkan sangat baik dimana FPS menyentuh angka yang cukup tinggi. Hal ini menunjukan bahwa sistem dapat berjalan dengan baik dan efisien, hal ini akan menjadi sangat penting bahwa output dari model YOLOv12 akan menjadi variabel utama dalam sistem pengereman otomatis.
+
+\subsection{Pengujian Model LSTM Berdasarkan FPS pada Laptop}
+
+Pengujian dilakukan pada laptop dengan spesifikasi yang telah disebutkan sebelumnya. Pengujian ini dilakukan dengan cara menjalankan sistem pada laptop dan merekam hasil dari pengujian tersebut. Hasil dari pengujian ini akan ditampilkan dalam bentuk tabel. Gambar \ref{fig:Foto pengujian fps laptop} merupakan gambar pengambilan data fps pada laptop.
+
+Pada tabel \ref{tb:TabelYoloLaptop} merupakan hasil dari pengujian model LSTM berdasarkan FPS pada Laptop. Dari hasil tersebut didapatkan rata rata FPS sebesar 27.xxx, dengan nilai tertinggi FPS sebesar 30.xxx dan nilai terendah sebesar 19.xxx.
+
+
+\begin{table}[H]
+  \centering
+  \caption{Nilai Pengujian Model LSTM Berdasarkan FPS pada Laptop} 
+  \label{tb:TabelLSTMLaptop}
+  \begin{tabular}{|l|l|l|l|l|l|l|l|}
+  \cline{1-2} \cline{4-5} \cline{7-8}
+  No & FPS   &  & No & FPS   &  & No & FPS   \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  1  & 25,91 &  & 11 & 23,09 &  & 21 & 22,38 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  2  & 22,43 &  & 12 & 24,67 &  & 22 & 22,79 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  3  & 23,25 &  & 13 & 22,76 &  & 23 & 24,57 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  4  & 23,98 &  & 14 & 25,74 &  & 24 & 22,73 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  5  & 26,32 &  & 15 & 23,46 &  & 25 & 22,62 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  6  & 22,19 &  & 16 & 25,3  &  & 26 & 25,03 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  7  & 23,32 &  & 17 & 25,96 &  & 27 & 23,17 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  8  & 22,57 &  & 18 & 22,51 &  & 28 & 25,16 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  9  & 22,76 &  & 19 & 24,97 &  & 29 & 25,06 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  10 & 24,78 &  & 20 & 22,43 &  & 30 & 22,48 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  \end{tabular}
+\end{table}
+
+Pada pengujian menggunakan model LSTM pada laptop ini, hasil yang didapatkan sangat baik dimana FPS menyentuh angka yang cukup tinggi. Hal ini menunjukan bahwa sistem dapat berjalan dengan baik dan efisien, hal ini akan menjadi sangat penting bahwa output klasifikasi gestur dari model LSTM akan digunakan dalam sistem kendali kursi roda.
+
+
+\subsection{Pengujian Model YOLOv11 Berdasarkan FPS pada NUC}
+
+Pengujian dilakukan pada NUC dengan spesifikasi yang telah disebutkan sebelumnya. Pengujian ini dilakukan dengan cara menjalankan sistem pada NUC dan merekam hasil dari pengujian tersebut. Hasil dari pengujian ini akan ditampilkan dalam bentuk tabel. Gambar \ref{fig:Foto pengujian fps NUC} merupakan gambar pengambilan data fps pada laptop.
+
+\begin{figure} [H] \centering
+  \includegraphics[scale=0.3]{gambar/devafps.jpg}
+  \caption{Pengujian FPS pada NUC}
+  \label{fig:Foto pengujian fps NUC}
+\end{figure}
+
+Pada tabel \ref{tb:TabelYoloLaptop} merupakan hasil dari pengujian model YOLOv11 berdasarkan FPS pada Laptop. Dari hasil tersebut didapatkan rata rata FPS sebesar 27.xxx, dengan nilai tertinggi FPS sebesar 30.xxx dan nilai terendah sebesar 19.xxx.
+
+\begin{table}[H]
+  \caption{Nilai Pengujian Model YOLOv11 Berdasarkan FPS pada NUC} 
+  \label{tb:TabelYolov11NUC}
+  \centering
+  \begin{tabular}{|l|l|l|l|l|l|l|l|}
+  \cline{1-2} \cline{4-5} \cline{7-8}
+  No & FPS   &  & No & FPS   &  & No & FPS   \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  1  & 9,12  &  & 11 & 10,4  &  & 21 & 9,59  \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  2  & 10,02 &  & 12 & 11,21 &  & 22 & 9,97  \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  3  & 10    &  & 13 & 10,87 &  & 23 & 10,09 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  4  & 9,94  &  & 14 & 9,87  &  & 24 & 9,97  \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  5  & 10,28 &  & 15 & 9,23  &  & 25 & 10,21 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  6  & 9,54  &  & 16 & 10,65 &  & 26 & 9,89  \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  7  & 9,95  &  & 17 & 10,02 &  & 27 & 10    \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  8  & 9,86  &  & 18 & 9,92  &  & 28 & 10,19 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  9  & 10,32 &  & 19 & 10,03 &  & 29 & 10,22 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  10 & 9,94  &  & 20 & 10,09 &  & 30 & 9,87  \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  \end{tabular}
+\end{table}
+Pada pengujian menggunakan model YOLOv11 pada laptop ini, hasil yang didapatkan sangat baik dimana FPS menyentuh angka yang cukup tinggi. Hal ini menunjukan bahwa sistem dapat berjalan dengan baik dan efisien, hal ini akan menjadi sangat penting bahwa output dari model YOLOv11 akan menjadi variabel utama dalam sistem pengereman otomatis.
+
+\subsection{Pengujian Model YOLOv8 Berdasarkan FPS pada NUC}
+
+Pengujian dilakukan pada laptop dengan spesifikasi yang telah disebutkan sebelumnya. Pengujian ini dilakukan dengan cara menjalankan sistem pada laptop dan merekam hasil dari pengujian tersebut. Hasil dari pengujian ini akan ditampilkan dalam bentuk tabel. Gambar \ref{fig:Foto pengujian fps laptop} merupakan gambar pengambilan data fps pada laptop.
+
+Pada tabel \ref{tb:TabelYoloLaptop} merupakan hasil dari pengujian model YOLOv8 berdasarkan FPS pada Laptop. Dari hasil tersebut didapatkan rata rata FPS sebesar 27.xxx, dengan nilai tertinggi FPS sebesar 30.xxx dan nilai terendah sebesar 19.xxx.
+
+\begin{table}[H]
+  \caption{Nilai Pengujian Model YOLOv8 Berdasarkan FPS pada NUC} 
+  \label{tb:TabelYolov8NUC}
+  \centering
+  \begin{tabular}{|l|l|l|l|l|l|l|l|}
+  \cline{1-2} \cline{4-5} \cline{7-8}
+  No & FPS  &  & No & FPS  &  & No & FPS  \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  1  & 5,43 &  & 11 & 6,34 &  & 21 & 5,32 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  2  & 3,65 &  & 12 & 5,76 &  & 22 & 6,43 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  3  & 5,67 &  & 13 & 5,98 &  & 23 & 5,65 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  4  & 6,54 &  & 14 & 5,34 &  & 24 & 6,19 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  5  & 5,34 &  & 15 & 6,32 &  & 25 & 5,71 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  6  & 4,98 &  & 16 & 4,94 &  & 26 & 4,31 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  7  & 5,74 &  & 17 & 5,53 &  & 27 & 4,67 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  8  & 5,01 &  & 18 & 5,67 &  & 28 & 5,43 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  9  & 6,43 &  & 19 & 6,32 &  & 29 & 4,81 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  10 & 7,33 &  & 20 & 5,12 &  & 30 & 6,53 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  \end{tabular}
+\end{table}
+
+Pada pengujian menggunakan model YOLOv8 pada laptop ini, hasil yang didapatkan sangat baik dimana FPS menyentuh angka yang cukup tinggi. Hal ini menunjukan bahwa sistem dapat berjalan dengan baik dan efisien, hal ini akan menjadi sangat penting bahwa output dari model YOLOv8 akan menjadi variabel utama dalam sistem pengereman otomatis.
+
+\subsection{Pengujian Model YOLOv12 Berdasarkan FPS pada NUC}
+
+Pengujian dilakukan pada laptop dengan spesifikasi yang telah disebutkan sebelumnya. Pengujian ini dilakukan dengan cara menjalankan sistem pada laptop dan merekam hasil dari pengujian tersebut. Hasil dari pengujian ini akan ditampilkan dalam bentuk tabel. Gambar \ref{fig:Foto pengujian fps laptop} merupakan gambar pengambilan data fps pada laptop.
+
+Pada tabel \ref{tb:TabelYoloLaptop} merupakan hasil dari pengujian model YOLOv8 berdasarkan FPS pada Laptop. Dari hasil tersebut didapatkan rata rata FPS sebesar 27.xxx, dengan nilai tertinggi FPS sebesar 30.xxx dan nilai terendah sebesar 19.xxx.
+
+\begin{table}[H]
+  \centering
+  \caption{Nilai Pengujian Model YOLOv12 Berdasarkan FPS pada NUC} 
+  \label{tb:TabelYolov12Nuc}
+  \begin{tabular}{|l|l|l|l|l|l|l|l|}
+  \cline{1-2} \cline{4-5} \cline{7-8}
+  No & FPS &  & No & FPS &  & No & FPS \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  1  &     &  & 11 &     &  & 21 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  2  &     &  & 12 &     &  & 22 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  3  &     &  & 13 &     &  & 23 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  4  &     &  & 14 &     &  & 24 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  5  &     &  & 15 &     &  & 25 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  6  &     &  & 16 &     &  & 26 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  7  &     &  & 17 &     &  & 27 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  8  &     &  & 18 &     &  & 28 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  9  &     &  & 19 &     &  & 29 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  10 &     &  & 20 &     &  & 30 &     \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  \end{tabular}
+\end{table}
+
+Pada pengujian menggunakan model YOLOv12 pada laptop ini, hasil yang didapatkan sangat baik dimana FPS menyentuh angka yang cukup tinggi. Hal ini menunjukan bahwa sistem dapat berjalan dengan baik dan efisien, hal ini akan menjadi sangat penting bahwa output dari model YOLOv12 akan menjadi variabel utama dalam sistem pengereman otomatis.
+
+\subsection{Pengujian Model LSTM Berdasarkan FPS pada NUC}
+
+Pengujian dilakukan pada laptop dengan spesifikasi yang telah disebutkan sebelumnya. Pengujian ini dilakukan dengan cara menjalankan sistem pada laptop dan merekam hasil dari pengujian tersebut. Hasil dari pengujian ini akan ditampilkan dalam bentuk tabel. Gambar \ref{fig:Foto pengujian fps laptop} merupakan gambar pengambilan data fps pada laptop.
+
+Pada tabel \ref{tb:TabelYoloLaptop} merupakan hasil dari pengujian model LSTM berdasarkan FPS pada Laptop. Dari hasil tersebut didapatkan rata rata FPS sebesar 27.xxx, dengan nilai tertinggi FPS sebesar 30.xxx dan nilai terendah sebesar 19.xxx. 
+
+
+\begin{table}[H]
+  \centering
+  \caption{Nilai Pengujian Model LSTM Berdasarkan FPS pada Laptop} 
+  \label{tb:TabelLSTMLaptop}
+  \begin{tabular}{|l|l|l|l|l|l|l|l|}
+  \cline{1-2} \cline{4-5} \cline{7-8}
+  No & FPS   &  & No & FPS   &  & No & FPS   \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  1  & 14,32 &  & 11 & 12,32 &  & 21 & 16,44 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  2  & 12,34 &  & 12 & 11,43 &  & 22 & 16,71 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  3  & 14,03 &  & 13 & 12,54 &  & 23 & 14,86 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  4  & 12,39 &  & 14 & 12,87 &  & 24 & 13,32 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  5  & 14,71 &  & 15 & 13,74 &  & 25 & 12,86 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  6  & 13,22 &  & 16 & 13,93 &  & 26 & 15,92 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  7  & 12,19 &  & 17 & 15,92 &  & 27 & 16,71 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  8  & 12,89 &  & 18 & 12,43 &  & 28 & 13,43 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  9  & 14,42 &  & 19 & 15,92 &  & 29 & 12,43 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  10 & 12,42 &  & 20 & 12,86 &  & 30 & 11,56 \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+  \end{tabular}
+  \end{table}
+
+Pada pengujian menggunakan model LSTM pada laptop ini, hasil yang didapatkan sangat baik dimana FPS menyentuh angka yang cukup tinggi. Hal ini menunjukan bahwa sistem dapat berjalan dengan baik dan efisien, hal ini akan menjadi sangat penting bahwa output klasifikasi gestur dari model LSTM akan digunakan dalam sistem kendali kursi roda.
+
+\newpage
+\section{Pengujian berdasarkan hasil respond time}
+Pengujian respond time dilakukan dengan cara mencatat hasil klasifikasi dari model LSTM dan hasil deteksi objek dari Model. Output dari model tersebut sudah dilengkapi dengan Arah dan timestamp yang dihasilkan untuk model klasifikasi gestur, dan timestamp pengereman yang dihasilkan untuk model deteksi objek. Dimana timestamp tersebut dibandingkan hasil pengiriman dari sistem dan hasil penerimaan dari hardware, dimana kedua data tersebut diambil melalui Terminal Visual Studio dan Arduino IDE. Berikut merupakan contoh data mentah untuk kedua hasil output: 
+
+\begin{lstlisting}[language=c]
+  
+  0: 480x800 1 Manusia, 101.8ms
+  Speed: 12.5ms preprocess, 101.8ms inference, 1.2ms postprocess per image at shape (1, 3, 480, 800)
+  [LSTM]  Mundur (D) == 04:06:10.098
+  Aksi: Mundur
+
+  0: 480x800 2 Manusias, 95.5ms
+  Speed: 16.2ms preprocess, 95.5ms inference, 1.3ms postprocess per image at shape (1, 3, 480, 800)
+  [LSTM]  Stop (C) == 04:06:10.426
+  Aksi: Stop
+
+  0: 480x800 2 Manusias, 95.5ms
+  Speed: 3.9ms preprocess, 74.0ms inference, 1.3ms postprocess per image at shape (1, 3, 480, 800)
+  [LSTM]  Maju (B) == 04:06:10.554
+  Aksi: Maju
+
+\end{lstlisting}
+
+Data diatas merupakan sampel data mentah yang didapatkan dari hasil klasifikasi gesture menggunakan model LSTM. Adapun output untuk model YOLO dipisahkan penulisannya dari hasil klasifikasi gesture, hal ini bertujuan untuk mempermudah dalam pengolahan data. Berikut merupakan contoh data mentah untuk hasil deteksi objek menggunakan model YOLOv11, YOLOv8 dan YOLOv12:
+
+\begin{lstlisting}[language=c]
+  
+  0: 480x800 1 Manusia, 81.6ms
+  Speed: 10.0ms preprocess, 81.6ms inference, 1.3ms postprocess per image at shape (1, 3, 480, 800)
+  STOP
+  [YOLO] BREAK Response ======== 04:06:10.553
+  
+  0: 480x800 1 Manusia, 73.0ms
+  Speed: 5.5ms preprocess, 73.0ms inference, 1.4ms postprocess per image at shape (1, 3, 480, 800)
+  STOP 
+  [YOLO] BREAK Response ======== 04:06:10.737
+
+\end{lstlisting}
+
+\newpage
+Output yang didapatkan pada ardruino berisikan Timestamp. Timestamp yang dihasilkan yaitu \emph{Timestamp Receive ESP} dan \emph{Timestamp Receive Motor}. contoh outputnya dapat dilihat sebagai berikut.
+
+\begin{lstlisting}[language=python]
+  BELOK KANAN,0.8,2024-05-08 22:18:14.263
+  MAJU,0.4,2024-05-08 22:18:18.762
+  BELOK KANAN,0.0,2024-05-08 22:18:28.614
+  MAJU,0.0,2024-05-08 22:18:30.940
+  BELOK KANAN,1.2,2024-05-08 22:18:32.899
+  MAJU,0.8,2024-05-08 22:18:34.728
+  BELOK KANAN,0.0,2024-05-08 22:18:36.392
+\end{lstlisting}
+
+Pengujian ini akan dihitung response time sejumlah 30 kali yang akan dijabarkan pada tabel refxxxxx Hasil rsponse time akan diuji untuk mendapatkan waktu yang dibutuhkan untuk melakukan pendeteksian maupun klasifikasi gesture pada model yang kemudian diteruskan ke ESP32 hingga ke motor kursi roda mulai bergerak. Pengujian ini dilakukan secara real time pada perangkat Laptop, perhitungan delay didapatkan dari mulai dikirim hingga berhentinya motor pada kursi roda. Mengingat bahwa baik inference maupun response kirim dari kedua model berbeda maka tabel akan dibedakan menjadi dua tabel, yaitu tabel untuk model YOLO dan tabel untuk model LSTM.
+
+\begin{table}[H]
+  \centering
+  \label{tb:TabelHasilPengujianResponseTimeLSTM}
+  \caption{Hasil Pengujian Response Time Model LSTM}
+  \begin{tabular}{|l|l|l|l|l|l|}
+  \hline
+  Inference & Sent & Receive & Motor & Delay & Arah \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+  \end{tabular}
+  \end{table}
+
+Pada Tabel refxxxxxx Rata - rata waktu delay yang didapatkan adalah 0.2494 detik dari data yang sudah didapatkan dari pengujian NUC, adapun hasil nya dapat dilihat pada tabel dibawah. Adapun nilai inference rata-rata yang didapatkan adalah  139.4899 ms atau 0.1394899 detik.
+
+
+
+\begin{table}[H]
+  \centering
+  \label{tb:TabelHasilPengujianResponseTimeYOLO}
+  \caption{Hasil Pengujian Response Time Model YOLO}
+  \begin{tabular}{|l|l|l|l|l|l|}
+  \hline
+  Inference & Sent & Receive & Motor & Delay & Arah \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+            &      &         &       &       &      \\ \hline
+  \end{tabular}
+  \end{table}
+
+  Pada Tabel refxxxxxx Rata - rata waktu delay yang didapatkan adalah 0.2494 detik dari data yang sudah didapatkan dari pengujian NUC, adapun hasil nya dapat dilihat pada tabel dibawah. Adapun nilai inference rata-rata yang didapatkan adalah  139.4899 ms atau 0.1394899 detik.
+
+
+\subsection{Pengujian Sistem Pengereman Otomatis pada jarak 150 cm}
+
+Pada pengujian ini dilakukan pengetesan terhadap kursi roda dalam melakukan pengereman otomatis. Pengetesan ini akan dilakukan Pada Tower 2 ITS. Manusia yang dideteksi berdiri tegak. Adapun pengujian ini bertujuan untuk mengetahui keberhasilan pengereman dalam 10 sampel pengujian. Kursi roda sudah diatur agar tidak membahayakan subjek penelitian. 
+
+\begin{table}[H]
+  \centering
+  \caption{Tabel Performa Keberhasilan Pengereman Otomatis}
+  \label{tb:gemeter}
+  \begin{tabular}{|c|c|}
+  \hline
+  Percobaan & Hasil                                                               \\ \hline
+  1         & \cellcolor[HTML]{9AFF99}Kursi Roda Berhasil Berhenti              \\ \hline
+  2         & \cellcolor[HTML]{9AFF99}Kursi Roda Berhasil Berhenti              \\ \hline
+  3         & \cellcolor[HTML]{9AFF99}Kursi Roda Berhasil Berhenti              \\ \hline
+  4        & \cellcolor[HTML]{9AFF99}Kursi Roda Berhasil Berhenti              \\ \hline
+  \end{tabular}
+\end{table}
+
+Dari hasil yang didapatkan pada tabel refxxx pada 10 kali sampel percobaan didapatkan rasio keberhasilan sebesar 100\% yang menunjukan bahwa sistem pengereman otomatis pada jarak 150 cm dapat berjalan dengan baik dan sesuai dengan yang diharapkan.
+
+Untuk mengetahui lebih dalam performa dari model dalam melakukan pengereman maka diperlukannya Uji akurasi dari sistem pengereman otomatis ini. Uji akurasi ini dilakukan dengan cara menghitung jarak yang didapatkan pada sistem dan jarak asli menggunakan meteran.
+
+
+
+  \begin{table}[]
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    Breaking Distance & Real Distance & System Distance & Real error & System Error \\ \hline
+    150cm             & 169cm         & 180cm           & 19cm       & 30cm         \\ \hline
+                      &               &                 &            &              \\ \hline
+                      &               &                 &            &              \\ \hline
+                      &               &                 &            &              \\ \hline
+                      &               &                 &            &              \\ \hline
+                      &               &                 &            &              \\ \hline
+                      &               &                 &            &              \\ \hline
+                      &               &                 &            &              \\ \hline
+    \end{tabular}
+    \end{table}
+
+    Dalam uji akurasi pengereman didapatkan hasil yaitu error pengukuran nyata sebesar 19.xxcm dan error sistem sebesar 30.xxcm. Hal ini menunjukan bahwa sistem tidak terlalu akurat dalam melakukan estimasi jarak. 
+
+    Hal tersebut terjadi disebabkan oleh beberapa faktor yaitu posisi kamera yang terguncang saat pengujian, delay pada sistem, laptop yang tidak di charge saat pengujian, dan suhu ruangan yang cukup panas menyebabkan laptop menjadi lambat.

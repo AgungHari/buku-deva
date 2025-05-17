@@ -37,9 +37,41 @@ Sistem SIBI (Sistem Isyarat Bahasa Indonesia) adalah suatu sistem komunikasi yan
 \emph{Object Detection} adalah teknik visi komputer yang membantu mengidentifikasi dan menemukan objek dalam gambar dan video. Dengan bentuk identifikasi dan pelokalan ini, deteksi objek dapat digunakan untuk menghitung jumlah item dalam sebuah skenario, menemukan dan mengidentifikasi mereka dengan tepat, serta memberikan nama. Pendeteksian objek tetap menjadi salah satu aspek paling mendasar dan menantang dalam aplikasi visi komputer dan pemahaman citra. Kemajuan signifikan dalam deteksi objek telah dicapai melalui representasi objek yang lebih baik dan penggunaan model jaringan saraf dalam (deep neural networks). Metode deteksi objek telah berkembang pesat dengan penggunaan jaringan saraf konvolusional (CNN) dan algoritme khusus seperti YOLO (You Only Look Once) dan SSD (Single Shot Multibox Detector).
 Selain kerangka YOLO, kemajuan juga telah dicapai di bidang deteksi objek dan pemrosesan gambar.Memperluas beberapa metode terkenal lainnya. Teknologi seperti R-CNN (Konvolusi Berbasis Wilayah), (Neural Networks nasional) dan penerusnya Fast R-CNN dan Faster R-CNN.
 Ini memainkan peran penting dalam meningkatkan akurasi deteksi objek. Metode ini bergantung pada dua proses Tahap tersebut melakukan pencarian selektif untuk menghasilkan proposal wilayah dan menghasilkan jaringan saraf konvolusional.Klasifikasi dan penyempurnaan area ini. Pendekatan penting lainnya adalah Single-Shot MultiBox Detector (SSD), yang mirip dengan YOLO dalam mengutamakan kecepatan dan efisiensi dengan menghilangkan kebutuhan akan langkah proposal wilayah secara terpisah. Di sisi lain, metode seperti Mask R-CNN telah meningkatkan kemampuan deteksi objek hingga mencakup segmentasi instans, memungkinkan pelokalan objek yang lebih presisi hingga tingkat piksel. Perkembangan ini, bersama metode lainnya seperti RetinaNet dan EfficientDet, secara kolektif telah memperkaya keragaman algoritma deteksi objek. Setiap algoritma ini menawarkan keseimbangan yang berbeda antara kecepatan, akurasi, dan tingkat kompleksitas, yang dirancang untuk memenuhi berbagai kebutuhan aplikasi dan batasan komputasi.
+
+\subsection{Convolutional Neural Network (CNN)}
+
+Convolutional Neural Network (CNN) adalah jenis lapisan \emph{deep learning} yang dirancang khusus untuk memproses data dalam bentuk grid seperti gambar. CNN merupakan lapisan dasar yang digunakan dalam membangun arsitektur YOLO. Dimana dalam penggunaannya CNN memiliki beberapa lapisan (\emph{layers}) yang secara hierarkis mengekstrak fitur dari data masukan. Berikut adalah penjelasan mengenai komponen utama dari CNN:
+
+\subsubsection{Lapisan Konvolusi (\emph{Convolutional Layer})}
+
+Lapisan konvolusi adalah inti dari CNN. Pada lapisan ini, filter (\emph{kernels}) diterapkan pada input untuk menghasilkan peta fitur (\emph{feature map}). Filter ini bergerak melintasi input dengan operasi konvolusi, menangkap pola lokal seperti tepi, tekstur, dan bentuk. Setiap filter mempelajari fitur yang berbeda dari data. berikut merupakan rumus untuk operasi konvolusi dalam konteks matematika dan pemrosesan sinyal.
+
+\begin{equation}
+    (f * g)(t) = \int_{-\infty}^{\infty} f(\tau)g(t - \tau) \, d\tau
+\end{equation}
+
+\subsubsection{Lapisan Aktivasi (\emph{Activation Layer})}
+
+Lapisan aktivasi memperkenalkan non-linearitas ke dalam model, memungkinkan jaringan untuk mempelajari hubungan yang kompleks. Fungsi aktivasi yang umum digunakan adalah ReLU (\emph{Rectified Linear Unit}), yang mendefinisikan \( f(x) = \max(0, x) \). Fungsi ini menggantikan nilai negatif dalam peta fitur dengan nol.
+
+\subsubsection{Lapisan Pooling (\emph{Pooling Layer})}
+
+Lapisan pooling mengurangi dimensi spasial dari peta fitur, mengurangi jumlah parameter dan komputasi dalam jaringan. Tipe pooling yang sering digunakan adalah \emph{max pooling}, yang memilih nilai maksimum dalam setiap jendela pooling. Pooling membantu dalam membuat deteksi fitur lebih robust terhadap perubahan posisi dan skala.
+
+\subsubsection{Lapisan Fully Connected (\emph{Fully Connected Layer})}
+
+Pada lapisan fully connected, setiap neuron terhubung dengan semua neuron di lapisan sebelumnya. Lapisan ini biasanya terletak di akhir jaringan dan digunakan untuk menggabungkan fitur-fitur yang telah diekstraksi menjadi prediksi akhir. 
+
+\subsubsection{Lapisan Output (\emph{Output Layer})}
+Lapisan output menghasilkan prediksi akhir dari model. Dalam konteks deteksi objek, lapisan ini dapat menghasilkan hasil kelas objek yang terdeteksi. Fungsi aktivasi softmax sering digunakan untuk klasifikasi multi-kelas, sedangkan fungsi sigmoid digunakan untuk deteksi objek dengan beberapa kelas.
+
+
 \subsection{YOLO(You Look Only Once)}
-    YOLO (You Only Look Once) adalah salah satu algoritma deteksi objek dalam visi komputer yang dirancang untuk mendeteksi dan mengidentifikasi objek dalam gambar atau video secara cepat dan akurat. YOLO bekerja dengan cara menganalisis gambar secara keseluruhan dalam satu kali pemrosesan (hence "You Only Look Once"), berbeda dengan metode lainnya yang sering memproses gambar secara bertahap atau melalui beberapa langkah, seperti mengidentifikasi wilayah objek terlebih dahulu baru kemudian mengklasifikasikan objek tersebut.
+YOLO (You Only Look Once) adalah salah satu algoritma deteksi objek dalam visi komputer yang dirancang untuk mendeteksi dan mengidentifikasi objek dalam gambar atau video secara cepat dan akurat. YOLO bekerja dengan cara menganalisis gambar secara keseluruhan dalam satu kali pemrosesan (hence "You Only Look Once"), berbeda dengan metode lainnya yang sering memproses gambar secara bertahap atau melalui beberapa langkah, seperti mengidentifikasi wilayah objek terlebih dahulu baru kemudian mengklasifikasikan objek tersebut.
+
 Pada dasarnya, YOLO membagi gambar menjadi grid dan, untuk setiap grid, memprediksi berbagai kotak pembatas (bounding boxes) dan kemungkinan kelas objek yang ada di dalamnya. Hal ini memungkinkan YOLO untuk mendeteksi beberapa objek dalam satu gambar secara bersamaan dalam satu waktu pemrosesan, sehingga sangat efisien dalam hal kecepatan.
+
+\newpage
 \subsection{YOLOv11}
 YOLOv11 merupakan iterasi terbaru dalam seri pengembangan YOLO yang memperkenalkan peningkatan arsitektur baru, termasuk mekanisme perhatian yang lebih baik, lapisan ekstraksi fitur yang lebih dalam, dan paradigma deteksi tanpa jangkar (anchor-free). Inovasi-inovasi ini dirancang untuk mengatasi tantangan dalam mendeteksi kendaraan yang lebih kecil, tersembunyi, atau bergerak cepat, sambil mempertahankan kemampuan inferensi waktu nyata. YOLOv11 juga dioptimalkan untuk percepatan perangkat keras, membuatnya lebih kompatibel dengan perangkat tepi yang digunakan dalam aplikasi kritis seperti deteksi emosi dan sistem transportasi cerdas.
 Peningkatan dalam YOLOv11, khususnya dengan pengenalan deteksi tanpa jangkar dan mekanisme perhatian yang lebih baik, menandakan langkah maju dalam pengembangan sistem deteksi kendaraan yang kuat dan dapat diskalakan.
@@ -176,9 +208,40 @@ ditetapkan memungkinkan penetapan batas bagi kotak prediksi untuk dianggap cocok
 deteksi yang benar, memfasilitasi penyesuaian antara tingkat akurasi deteksi dan insiden false positif. Penentuan batas IoU tidak bersifat tetap dan dapat disesuaikan, dengan 0,5 yang menjadi standar patokan awal. Kotak prediksi dengan IoU minimal 0,5 terhadap deteksi positif dianggap valid. Penyesuaian ambang nilai ini mempengaruhi balance antara presisi dan daya tangkap, dengan peningkatan nilai ambang cenderung mengurangi kesalahan positif namun berpotensi mengabaikan beberapa deteksi valid.Penggunaan nilai kebenaran dasar dalam IoU merupakan perbandingan standar antara prediksi dan kondisi aktual objek yang diidentifikasi. Penandaan kotak kebenaran dasar, dilakukan secara manual oleh pakar, menentukan batas pasti objek dalam gambar. Skor IoU yang dihasilkan dari perbandingan antara prediksi model dengan batas ini memberikan wawasan terhadap efektivitas model dalam deteksi objek. Dataset kebenaran dasar, yang meliputi kotak pembatas yang ditandai secara manual, menjadi kunci dalam proses evaluasi ini, memberikan dasar objektif untuk mengukur kinerja algoritme deteksi objek\cite{Shah2023}.
 
 \subsection{Tensorflow}
-TensorFlow adalah sistem pembelajaran mesin yang beroperasi dalam skala besar dan di lingkungan yang heterogen. TensorFlow menggunakan grafik aliran data untuk merepresentasikan komputasi, status bersama, dan operasi yang mengubah status tersebut. Ini memetakan node grafik aliran data di banyak mesin dalam sebuah cluster, dan di dalam mesin di beberapa perangkat komputasi, termasuk CPU multicore, general-purpose GPU, dan ASIC yang dirancang khusus yang dikenal sebagai Tensor Processing Units (TPU). Arsitektur ini memberikan fleksibilitas kepada pengembang aplikasi. TensorFlow memungkinkan pengembang bereksperimen dengan pengoptimalan baru dan algoritma pelatihan. TensorFlow mendukung berbagai aplikasi, dengan dukungan yang sangat kuat untuk pelatihan dan inferensi pada jaringan neural dalam. Beberapa layanan Google menggunakan TensorFlow dalam produksinya, dan telah banyak digunakan untuk penelitian pembelajaran mesin.\
+TensorFlow adalah sistem pembelajaran mesin yang beroperasi dalam skala besar dan di lingkungan yang heterogen. TensorFlow menggunakan grafik aliran data untuk merepresentasikan komputasi, status bersama, dan operasi yang mengubah status tersebut. Ini memetakan node grafik aliran data di banyak mesin dalam sebuah cluster, dan di dalam mesin di beberapa perangkat komputasi, termasuk CPU multicore, general-purpose GPU, dan ASIC yang dirancang khusus yang dikenal sebagai Tensor Processing Units (TPU). Arsitektur ini memberikan fleksibilitas kepada pengembang aplikasi. TensorFlow memungkinkan pengembang bereksperimen dengan pengoptimalan baru dan algoritma pelatihan. TensorFlow mendukung berbagai aplikasi, dengan dukungan yang sangat kuat untuk pelatihan dan inferensi pada jaringan neural dalam. Beberapa layanan Google menggunakan TensorFlow dalam produksinya, dan telah banyak digunakan untuk penelitian pembelajaran mesin.
+
 \subsubsection{Tensorflow-Keras}
 Keras merupakan library yang dikembangkan oleh Francois Chollet. Keras ini dirancang oleh pengembang agar cepat, mudah diimplementasikan, dan modular secara alami. Keras diadopsi sebagai API tingkat tinggi untuk mengembangkan algoritma pembelajaran mendalam alias deep learning. 
+
+
+\subsection{Roboflow}
+RoboFlow adalah platform yang mendukung pengembangan dan penyebaran aplikasi visi komputer dengan menyediakan fitur - fitur untuk manajemen dan peningkatan dataset. Platform ini dirancang untuk memudahkan pengolahan, analisis, dan augmentasi data visual, sehingga mempercepat siklus pengembangan dan peningkatan model pembelajaran mesin.
+
+\begin{figure}[H]
+  \centering
+
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[scale=0.3]{gambar/roboflow.jpg}
+
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{Interface Roboflow}
+  \label{fig:roboflow}
+\end{figure}
+
+RoboFlow menyediakan serangkaian fungsi yang membantu dalam proses pengembangan model visi komputer, termasuk:
+\begin{itemize}
+    \item Annotasi Data : RoboFlow memungkinkan pengguna untuk menandai gambar dengan alat bantu yang intuitif, mempercepat proses pembuatan label untuk dataset.
+    \item Augmentasi Data: Melalui augmentasi data, RoboFlow dapat secara otomatis memodifikasi gambar dalam dataset untuk menciptakan variasi, yang membantu dalam meni- ngkatkan robustness model yang dilatih.
+    \item Konversi Format Data: Platform ini mendukung konversi antara berbagai format dataset yang populer, memudahkan pengguna dalam mempersiapkan data untuk berbagai jenis algoritma pembelajaran mesin.
+    \item Pemisahan Dataset: RoboFlow menyediakan fungsi untuk membagi dataset menjadi set pelatihan, validasi, dan pengujian, yang merupakan langkah penting dalam validasi model.
+\end{itemize}
+RoboFlow menawarkan integrasi yang mulus dengan banyak kerangka kerja pembelajaran mesin populer seperti TensorFlow, PyTorch, dan YOLO. Integrasi ini memungkinkan pengembang:
+\begin{itemize}
+    \item Ekspor Data: Pengguna dapat dengan mudah mengekspor dataset mereka dalam format yang siap digunakan oleh kerangka kerja pembelajaran mesin pilihan mereka.
+    \item Pelatihan Model: Platform ini menyediakan alat yang memungkinkan pengguna untuk langsung melatih model mereka menggunakan dataset yang telah disiapkan dan dioptimalkan.
+    \item Evaluasi Model: RoboFlow menyediakan metrik untuk mengukur kinerja model, membantu pengguna memahami efektivitas model mereka dan membuat penyesuaian yang diperlukan.
+\end{itemize}
+
 
 \subsection{ESP-32}
 ESP32 adalah modul mikrokontroler terintegrasi yang memiliki fitur lengkap dan kinerja tinggi. Modul ini merupakan pengembangan dari ESP8266, yang merupakan modul WiFi populer. ESP32 memiliki dua prosesor komputasi, satu prosesor untuk mengelola jaringan WiFi dan Bluetooth, serta satu prosesor lainnya untuk menjalankan aplikasi. Dilengkapi dengan memori RAM yang cukup besar untuk menyimpan data. Fitur yang berguna seperti TCP/IP, HTTP, dan FTP. Modul ini juga dilengkapi fitur pemrosesan sinyal analog, dukungan untuk sensor, dan dukungan untuk perangkat masukan/keluaran (I/O) digital. ESP32 juga memiliki dukungan untuk konektivitas Bluetooth. Dapat digunakan untuk mengendalikan perangkat yang terhubung dengan Bluetooth.

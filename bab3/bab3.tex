@@ -227,6 +227,7 @@ Motion command adalah perintah yang digunakan untuk mengendalikan gerakan suatu 
 \subsection{Motion Planning}
 Motion planning adalah proses perencanaan jalur atau gerakan bagi suatu objek atau perangkat untuk mencapai tujuan tertentu dengan mempertimbangkan berbagai faktor, seperti hambatan, batasan kecepatan, dan kondisi lingkungan. Dalam konteks robotika atau kendaraan otonom, motion planning bertujuan untuk merencanakan serangkaian langkah atau aksi yang harus diambil agar objek dapat bergerak dari titik awal menuju titik tujuan secara aman, efisien, dan sesuai dengan batasan yang ada. Proses ini melibatkan pembuatan peta lingkungan yang menggambarkan hambatan yang harus dihindari, serta perencanaan jalur yang menghubungkan posisi awal dan tujuan. Selain itu, motion planning juga mencakup optimasi jalur untuk meningkatkan efisiensi, seperti mengurangi waktu atau energi yang dibutuhkan, dan eksekusi jalur tersebut dengan mengontrol perangkat untuk mengikuti rute yang telah direncanakan. Dalam kendaraan otonom, misalnya, motion planning digunakan untuk merencanakan jalur yang menghindari kendaraan lain dan rintangan di jalan, sementara dalam robotika, motion planning memastikan robot dapat bergerak dari satu lokasi ke lokasi lain tanpa menabrak objek sekitarnya. Dengan demikian, motion planning memungkinkan perangkat bergerak secara cerdas, aman, dan responsif terhadap lingkungan sekitarnya.
 
+\newpage
 \subsection{Training Model}
 Pada tahap ini, dataset yang sudah diklasifikasi selanjutnya akan masuk ke tahap training ke sel LSTM.
 \begin{figure} [H] \centering
@@ -238,6 +239,8 @@ Pada tahap ini, dataset yang sudah diklasifikasi selanjutnya akan masuk ke tahap
   \label{fig:training model}
 \end{figure}
 Proses dimulai dengan lapisan TimeDistributed, yang menerapkan transformasi pada setiap langkah waktu dari data sekuensial dengan panjang 30, menghasilkan keluaran dengan dimensi 128. Lapisan ini digunakan untuk mengolah data dengan fitur per frame, seperti hasil dari pose estimation. Selanjutnya, lapisan LSTM pertama memproses data sekuensial untuk menangkap pola temporal dengan keluaran 128 per langkah waktu, diikuti dengan lapisan Dropout untuk mencegah overfitting. Lapisan LSTM kedua mengurangi dimensi keluaran menjadi 64 unit untuk fokus pada pola yang lebih signifikan, diikuti oleh Dropout kedua. LSTM ketiga mengurangi dimensi menjadi 32 unit untuk mempertahankan informasi penting, dengan Dropout ketiga untuk menjaga generalisasi. Setelah itu, lapisan Dense pertama mengintegrasikan informasi dari lapisan sebelumnya dengan 16 unit, diikuti dengan Dropout untuk regularisasi. Lapisan Dense kedua juga memiliki 16 unit untuk memperdalam pengolahan informasi, disertai dengan Dropout keempat. Lapisan Dense ketiga, yang merupakan lapisan output, menghasilkan 5 neuron yang kemungkinan mewakili 5 kelas gestur atau tindakan berbeda. Dengan penggunaan Dropout di setiap tahap, model ini dirancang untuk mencegah overfitting dan meningkatkan generalisasi agar dapat bekerja dengan baik pada data baru.
+
+\newpage
 \section{Hardware}
 pada tahap ini, perancangan hardware dilakukan sesuai dengan alur yang telah direncanakan sebelumnya. Perancangan ini akan dipresentasikan dengan blok diagram alur yang telah mereprentasikan alur dari bagian hardware.
 \begin{figure} [H] \centering
@@ -303,6 +306,8 @@ Setelah data diterima dan disimpan, string data tersebut akan diekstraksi untuk 
 \end{table}
 
 Sesuai dengan Tabel 3.2, kode intruksi tersebut diimplementasikan dengan hasil gestur yang didapatkan dari hasil training LSTM. Pengoperasian dari kursi roda diawali dengan intruksi kode B yakni maju, jika pengguna mengintruksikan kode A atau E kursi roda akan berbelok ke kiri atau kanan. Namun perlu diperhatikan, apabila ingin berganti arah agar motor tidak mengalami kesalahan dalam menerima input yang dihasilkan model, maka perlu dilakukan pemanggilan kelas ’Stop’ atau mengirim instruksi ’C’.
+
+\newpage
 \subsection{Skematik Alat}
 \begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
