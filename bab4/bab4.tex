@@ -577,7 +577,7 @@ Pada Tabel refxxxxxx Rata - rata waktu delay yang didapatkan adalah 0.2494 detik
 
 Pada Tabel refxxxxxx Rata - rata waktu delay yang didapatkan adalah 0.2494 detik dari data yang sudah didapatkan dari pengujian NUC, adapun hasil nya dapat dilihat pada tabel dibawah. Adapun nilai inference rata-rata yang didapatkan adalah  139.4899 ms atau 0.1394899 detik.
 
-\subsection{Pengujian Kesesuaian Jarak Pengereman Otomatis}
+\section{Pengujian Kesesuaian Jarak Pengereman Otomatis}
 Pengujian ini dilakukan pengetasan terhadap model dalam menghasilkan jarak berdasarkan hasil perhitungan pada \emph{Bounding Box}. Pengujian ini dilakukan dengan membandingkan jarak objek asli dengan jarak yang dihasilkan sistem pada Laptop dan Intel NUC terhadap manusia yang berdiri tegak. Kalibrasi telah dilakukan pada jarak 150 cm jarak ini diambil atas dasar visibilitas bounding box. Sehingga didapatkan nilai Focal Length sebesar 480. Nilai-nilai tersebut akan digunakan dalam pengujian kesesuaian jarak pada 150 cm dan 130 cm. Adapun tujuan dilakukan pengujian ini untuk menguji kemampuan model dalam mengukur jarak.
 
 Pengujian ini dilakukan menggunakan alat ukur meteran yang ditancapkan pada kamera dan ditarik menuju peneliti untuk mendapatkan jarak. Nilai tersebut akan dihitung untuk diambil nilai rata rata \emph{difference} atau perbedaan yang dihasilkan dari sistem terhadap pengukuran nyata.
@@ -730,7 +730,7 @@ Pada pengujian pertama jarak yang digunakan adalah 130cm atau 1.3m pada objek ny
 \end{table}
 
 \newpage
-\subsection{Performa Sistem Pengereman Otomatis}
+\section{Performa Sistem Pengereman Otomatis}
 
 Pada pengujian ini dilakukan pengetesan terhadap kursi roda dalam melakukan pengereman otomatis. Pengetesan ini akan dilakukan Pada Tower 2 ITS. Manusia yang dideteksi berdiri tegak. Adapun pengujian ini bertujuan untuk mengetahui keberhasilan pengereman dalam 10 sampel pengujian. Kursi roda sudah diatur agar tidak membahayakan subjek penelitian. Setiap model akan diuji untuk mengetahui performa sistem pengereman, serta mengetahui model manakah yang terbaik. Gambar \ref{fig:Fotoperforma} merupakan sampel pengujian yang akan dijadikan subjek penelitian.
 
@@ -808,7 +808,7 @@ Dari hasil yang didapatkan pada tabel \ref{tb:tabelyolov8performa} pada 10 kali 
 
 Dari hasil yang didapatkan pada tabel \ref{tb:tabelyolov12performa} pada 10 kali sampel percobaan didapatkan rasio keberhasilan sebesar 100\% yang menunjukan bahwa sistem pengereman otomatis menggunakan model YOLOv12 dapat berjalan dengan sempurna.
 
-\subsection{Pengujian Akurasi Sistem Pengereman Otomatis}
+\section{Pengujian Akurasi Sistem Pengereman Otomatis}
 Untuk mengetahui lebih dalam performa dari model dalam melakukan pengereman maka diperlukannya Uji akurasi dari sistem pengereman otomatis ini. Uji akurasi ini dilakukan dengan cara menghitung jarak yang didapatkan pada sistem dan jarak asli menggunakan meteran. Gambar \ref{fig:FotoPengambilanakurasi} telah dilakukan pengukuran menggunakan meteran untuk mendapatkan jarak saat terjadi pengereman dan juga mengambil jarak pada sistem dengan mendokumentasikan hasil dari sistem dengan menggunakan OBS.
 
 \begin{figure} [H] 
